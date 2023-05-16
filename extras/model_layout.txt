@@ -1,0 +1,30 @@
+// userHistorySchema
+
+propertyHistorySchema
+    value: String default-> ""
+    whenModified: Date default-> Date.now()
+
+userHistorySchema
+    firstNameHistory: propertyHistorySchema
+    lastNameHistory: propertyHistorySchema
+    rankHistory: propertyHistorySchema
+    emailHistory: propertyHistory
+
+
+
+UserSchema
+    firsName: String
+    lastName: String
+    email: String Unique
+    password: String
+    numIdeasSubmitted: Number
+    numCommentsLeft: Number
+    signUpDate: Date default-> Date.now()
+    lastLoginDate: Date default-> Date.now()
+    numLogins: Number default-> 1
+    hubspotContactId: String index-> true
+    rank: String
+    propertyHistory: userHistorySchema
+
+
+
